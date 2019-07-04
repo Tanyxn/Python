@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> laobian
 # from time import sleep
 # from selenium import webdriver
 #
@@ -22,11 +25,18 @@
 #         chrome.close()
 #         return
 #     #关闭浏览器
+<<<<<<< HEAD
 ##################################################################
 
 from time import sleep
-from selenium import webdriver
+=======
 
+>>>>>>> laobian
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+
+<<<<<<< HEAD
 def getFile(chrome, url):
     #实例化一个浏览器驱动
     #访问页面
@@ -52,3 +62,19 @@ def getFile(chrome, url):
 if __name__ == '__main__':
     chrome = webdriver.Chrome()
     getFile(chrome, "http://seputu.com/biji2/127.html")
+=======
+def getFile(Url):
+    chrome = webdriver.Chrome()
+    chrome.get(Url)
+    texts = chrome.find_elements_by_xpath("//div[@id='content']")
+    for t in texts:
+        with open("xiaoshuo.txt","a") as f:
+            f.write(t.text)
+    sleep(5)
+    chrome.find_element_by_id("banner").send_keys(Keys.RIGHT)
+    sleep(25)
+
+Url = "https://www.biquga.com/14_14318/3654877.html"
+getFile(Url)
+
+>>>>>>> laobian
